@@ -105,11 +105,11 @@
 			<version>5.1.1</version>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>camt.se234</groupId>
-			<artifactId>lab11</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>camt.se234</groupId>-->
+			<!--<artifactId>lab11</artifactId>-->
+			<!--<version>0.0.1-SNAPSHOT</version>-->
+		<!--</dependency>-->
 
 	</dependencies>
 
