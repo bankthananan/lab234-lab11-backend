@@ -5,7 +5,7 @@ before_install:
   -s`-`uname -m` > docker-compose
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
-- docker login -u coca1719 -p coca1719
+- docker login -u "$DOCKID" -p "$DOCKP"
 install:
 - mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
@@ -14,7 +14,7 @@ install:
 - docker pull coca1719/se234-lab11-client
 
 script:
-- docker-compose -H tcp://54.191.206.59:8025 up -d
+- docker-compose -H "$DOCKIP" up -d
 cache:
   directories:
   - "$HOME/.m2"
