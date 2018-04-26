@@ -30,14 +30,15 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> findStudentByPartOfId(String id) {
         List<Student> output = new ArrayList<>();
-        if(output.isEmpty()){
-            throw new NoDataException();
-        }
+
         for (Student student: this.studentDao.findAll()
                 ) {
             if (student.getStudentId().indexOf(id) != -1){
                 output.add(student);
             }
+        }
+        if(output.isEmpty()){
+            throw new NoDataException();
         }
         return output;
     }
