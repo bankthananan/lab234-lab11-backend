@@ -10,8 +10,8 @@ install:
 - mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
 - docker build --build-arg JAR_FILE=/target/backend.jar -t coca1719/se234-lab11-backend  .
-- docker push coca1719/se234-lab11-backend
-- docker pull coca1719/se234-lab11-client
+- docker push coca1719/se234-lab11-backend:latest
+- docker pull coca1719/se234-lab11-client:latest
 
 script:
 - docker-compose -H "$DOCKIP" up -d
