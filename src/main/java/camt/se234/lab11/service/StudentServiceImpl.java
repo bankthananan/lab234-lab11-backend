@@ -1,7 +1,10 @@
 package camt.se234.lab11.service;
 
+import camt.se234.lab11.NoDataException;
 import camt.se234.lab11.dao.StudentDao;
+import camt.se234.lab11.dao.StudentDaoImpl;
 import camt.se234.lab11.entity.Student;
+//import jdk.internal.jline.internal.TestAccessible;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +24,15 @@ public class StudentServiceImpl implements StudentService {
                 return student;
             }
         }
-        return null;
+        throw new NoDataException();
     }
 
     @Override
     public List<Student> findStudentByPartOfId(String id) {
         List<Student> output = new ArrayList<>();
+        if(output.isEmpty()){
+            throw new NoDataException();
+        }
         for (Student student: this.studentDao.findAll()
                 ) {
             if (student.getStudentId().indexOf(id) != -1){
@@ -45,6 +51,10 @@ public class StudentServiceImpl implements StudentService {
             total += student.getGpa();
 
         }
+        if(this.studentDao.findAll().size()==0){
+            throw new ArithmeticException();
+        }
         return total/this.studentDao.findAll().size();
     }
+
 }

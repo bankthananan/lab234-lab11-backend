@@ -64,6 +64,12 @@
 			<version>4.2.0</version>
 		</dependency>
 		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>com.zhokhov.graphql</groupId>
 			<artifactId>graphql-datetime-spring-boot-starter</artifactId>
 			<version>1.0.0</version>
@@ -93,6 +99,17 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.16</version>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>camt.se234</groupId>
+			<artifactId>lab11</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 	</dependencies>
 
@@ -102,6 +119,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<compilerArgument>-XDignore.symbol.file</compilerArgument>
+				</configuration>
 			</plugin>
 		</plugins>
 		<resources>
